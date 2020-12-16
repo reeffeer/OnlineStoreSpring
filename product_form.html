@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a th:href="@{/}">На главную</a>
+<h1>Форма ввода данных</h1>
+<form th:action="@{/products/form}" th:object="${product}" method="post">
+    Название <input type="text" placeholder="Черный хлеб" th:field="*{title}"><br>
+    Цена  <input type="number" placeholder="345" th:field="*{cost}"><br>
+    <button type="submit">Отправить</button>
+    <button type="reset">Очистить</button>
+    <hr>
+    &copy; Все права защищены.
+</form>
+</body>
+</html>
